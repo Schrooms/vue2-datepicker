@@ -22,6 +22,7 @@
         :readonly="!editable"
         :value="text"
         :placeholder="innerPlaceholder"
+        :tabindex="tabindex"
         @keydown="handleKeydown"
         @focus="handleFocus"
         @blur="handleBlur"
@@ -137,6 +138,10 @@ export default {
       validator: function (value) {
         return ['timestamp', 'format', 'date'].indexOf(value) !== -1 || isPlainObject(value)
       }
+    },
+    tabindex: {
+      type:Number,
+      default: null
     },
     placeholder: {
       type: String,
